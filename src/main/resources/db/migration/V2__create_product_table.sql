@@ -4,5 +4,6 @@ create table products.product (
 	nome varchar(100) not null,
 	descricao varchar not null,
 	preco float not	null,
-	category_id	bigint REFERENCES products.category(id)
+	category_id	bigint REFERENCES products.category(id),
+	data_cadastro timestamp not	null
 );
