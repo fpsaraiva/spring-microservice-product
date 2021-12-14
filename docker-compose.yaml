@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  postgres-products:
+    image: postgres:9.6-alpine
+    volumes:
+      - products-volume:/var/lib/postgresql/data
+    container_name: "postgres-products"
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: productsdb
+
+volumes:
+  products-volume:
+
+networks:
+  default:
+    external:
+      name: microservice-back-java
