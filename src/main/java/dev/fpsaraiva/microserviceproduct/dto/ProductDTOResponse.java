@@ -1,11 +1,11 @@
 package dev.fpsaraiva.microserviceproduct.dto;
 
-import dev.fpsaraiva.microserviceproduct.entity.Category;
 import dev.fpsaraiva.microserviceproduct.entity.Product;
-import org.springframework.data.domain.Page;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductDTOResponse {
 
@@ -52,7 +52,7 @@ public class ProductDTOResponse {
         return category;
     }
 
-    public static Page<ProductDTOResponse> toList(Page<Product> page) {
-        return page.map(ProductDTOResponse::new);
+    public static List<ProductDTOResponse> toList(List<Product> products) {
+        return products.stream().map(product -> new ProductDTOResponse(product)).collect(Collectors.toList());
     }
 }
