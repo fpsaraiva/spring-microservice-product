@@ -16,7 +16,7 @@ public class Product {
     private String productIdentifier;
     private LocalDateTime dataCadastro;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")
     private Category category;
 

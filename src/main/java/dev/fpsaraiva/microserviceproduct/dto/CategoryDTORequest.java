@@ -9,6 +9,10 @@ public class CategoryDTORequest {
     @NotBlank
     private String nome;
 
+    @Deprecated
+    public CategoryDTORequest() {
+    }
+
     public CategoryDTORequest(String nome) {
         this.nome = nome;
     }

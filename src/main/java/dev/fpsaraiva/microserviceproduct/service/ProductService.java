@@ -39,10 +39,12 @@ public class ProductService {
         return new ProductDTOResponse(product);
     }
 
-    public void delete (Long productId) {
+    public void delete (Long productId) throws Exception {
         Optional<Product> product = productRepository.findById(productId);
         if(product.isPresent()) {
             productRepository.delete(product.get());
+        } else {
+            throw new RuntimeException("teste");
         }
     }
 }

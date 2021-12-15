@@ -18,6 +18,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    //TODO: verificar dto response
     @GetMapping("/products")
     public ResponseEntity getProducts(Pageable page) {
         List<ProductDTOResponse> products = productService.getAll();
@@ -39,6 +40,7 @@ public class ProductController {
         return ResponseEntity.ok().body(product);
     }
 
+    //TODO: categoria pode ser salva mais de uma vez. ajustar esse comportamento.
     @PostMapping("/products")
     public ResponseEntity save(@Valid @RequestBody ProductDTORequest dto) {
         ProductDTOResponse newProduct = productService.save(dto);
@@ -46,13 +48,13 @@ public class ProductController {
     }
 
     @DeleteMapping("/products/{id}")
-    public ResponseEntity delete(@PathVariable Long id) {
-        /*try {
-
+    public ResponseEntity delete(@PathVariable Long id) throws Exception {
+        try {
+            productService.delete(id);
+            return ResponseEntity.ok().build();
         } catch (RuntimeException ex) {
-            throw HttpStatusCodeException();
-        }*/
-        productService.delete(id);
-        return ResponseEntity.ok().build();
+            throw new RuntimeException();
+        }
+
     }
 }
