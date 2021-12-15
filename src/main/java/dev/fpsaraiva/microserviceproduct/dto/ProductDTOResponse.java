@@ -1,11 +1,13 @@
 package dev.fpsaraiva.microserviceproduct.dto;
 
+import dev.fpsaraiva.microserviceproduct.entity.Category;
 import dev.fpsaraiva.microserviceproduct.entity.Product;
+import org.springframework.data.domain.Page;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-public class ProductDTORequest {
+public class ProductDTOResponse {
 
     @NotBlank
     private String nome;
@@ -20,15 +22,14 @@ public class ProductDTORequest {
     private String productIdentifier;
 
     @NotNull
-    private CategoryDTORequest category;
+    private CategoryDTOResponse category;
 
-    public ProductDTORequest(String nome, Float preco, String descricao, String productIdentifier,
-                             CategoryDTORequest category) {
-        this.nome = nome;
-        this.preco = preco;
-        this.descricao = descricao;
-        this.productIdentifier = productIdentifier;
-        this.category = category;
+    public ProductDTOResponse(Product product) {
+        this.nome = product.getNome();
+        this.preco = product.getPreco();
+        this.descricao = product.getDescricao();
+        this.productIdentifier = product.getProductIdentifier();
+        this.category = product.getCategory().toCategoryDTOResponse();
     }
 
     public String getNome() {
@@ -47,11 +48,11 @@ public class ProductDTORequest {
         return productIdentifier;
     }
 
-    public CategoryDTORequest getCategory() {
+    public CategoryDTOResponse getCategory() {
         return category;
     }
 
-    public Product toModel() {
-        return new Product(nome, preco, descricao, productIdentifier, category.toModel());
+    public static Page<ProductDTOResponse> toList(Page<Product> page) {
+        return page.map(ProductDTOResponse::new);
     }
 }

@@ -1,5 +1,7 @@
 package dev.fpsaraiva.microserviceproduct.entity;
 
+import dev.fpsaraiva.microserviceproduct.dto.CategoryDTOResponse;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -32,5 +34,9 @@ public class Category {
 
     public LocalDateTime getDataCadastro() {
         return dataCadastro;
+    }
+
+    public CategoryDTOResponse toCategoryDTOResponse() {
+        return new CategoryDTOResponse(nome);
     }
 }
