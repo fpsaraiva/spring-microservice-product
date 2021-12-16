@@ -1,9 +1,9 @@
 package dev.fpsaraiva.microserviceproduct.service;
 
-import dev.fpsaraiva.microserviceproduct.dto.ProductDTORequest;
-import dev.fpsaraiva.microserviceproduct.dto.ProductDTOResponse;
-import dev.fpsaraiva.microserviceproduct.entity.Product;
-import dev.fpsaraiva.microserviceproduct.repository.ProductRepository;
+import dev.fpsaraiva.microserviceproduct.api.dto.request.ProductDTORequest;
+import dev.fpsaraiva.microserviceproduct.api.dto.response.ProductDTOResponse;
+import dev.fpsaraiva.microserviceproduct.model.entity.Product;
+import dev.fpsaraiva.microserviceproduct.model.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

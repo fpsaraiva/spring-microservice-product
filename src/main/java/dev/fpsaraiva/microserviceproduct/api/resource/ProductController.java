@@ -1,7 +1,7 @@
-package dev.fpsaraiva.microserviceproduct.controller;
+package dev.fpsaraiva.microserviceproduct.api.resource;
 
-import dev.fpsaraiva.microserviceproduct.dto.ProductDTORequest;
-import dev.fpsaraiva.microserviceproduct.dto.ProductDTOResponse;
+import dev.fpsaraiva.microserviceproduct.api.dto.request.ProductDTORequest;
+import dev.fpsaraiva.microserviceproduct.api.dto.response.ProductDTOResponse;
 import dev.fpsaraiva.microserviceproduct.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;

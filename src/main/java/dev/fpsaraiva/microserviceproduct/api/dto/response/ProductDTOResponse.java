@@ -1,6 +1,6 @@
-package dev.fpsaraiva.microserviceproduct.dto;
+package dev.fpsaraiva.microserviceproduct.api.dto.response;
 
-import dev.fpsaraiva.microserviceproduct.entity.Product;
+import dev.fpsaraiva.microserviceproduct.model.entity.Product;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

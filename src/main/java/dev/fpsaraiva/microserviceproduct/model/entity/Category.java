@@ -1,6 +1,6 @@
-package dev.fpsaraiva.microserviceproduct.entity;
+package dev.fpsaraiva.microserviceproduct.model.entity;
 
-import dev.fpsaraiva.microserviceproduct.dto.CategoryDTOResponse;
+import dev.fpsaraiva.microserviceproduct.api.dto.response.CategoryDTOResponse;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

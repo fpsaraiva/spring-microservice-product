@@ -1,6 +1,6 @@
-package dev.fpsaraiva.microserviceproduct.repository;
+package dev.fpsaraiva.microserviceproduct.model.repository;
 
-import dev.fpsaraiva.microserviceproduct.entity.Product;
+import dev.fpsaraiva.microserviceproduct.model.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

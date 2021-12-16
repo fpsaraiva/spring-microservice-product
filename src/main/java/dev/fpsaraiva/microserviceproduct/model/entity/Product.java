@@ -1,4 +1,4 @@
-package dev.fpsaraiva.microserviceproduct.entity;
+package dev.fpsaraiva.microserviceproduct.model.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
